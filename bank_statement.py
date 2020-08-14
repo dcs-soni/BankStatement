@@ -21,9 +21,9 @@ class Banking:
 
         new = Account(username,password,amount)
         self.accounts.append(new)
-        print("--------Account created successfully--------")
-        print("Account Name:     " + new.username )
-        return "Balance:          " + str(new.amount)
+        print("\n--------Account created successfully--------\n")
+        print("\tAccount Name:     " + new.username )
+        return "\tBalance:          " + str(new.amount)
         
                 
 
@@ -45,7 +45,7 @@ class Banking:
         
         if amount > 0:
             account.amount -= amount
-            return "Withdrawn         " + str(amount) 
+            return "\tWithdrawn:        " + str(amount) 
         else:
             return "Invalid amount"
         
@@ -57,7 +57,7 @@ class Banking:
         
         if amount > 0:
             account.amount += amount
-            return "Deposited:        " + str(amount) 
+            return "\tDeposited:        " + str(amount) 
         else:
             return "Invalid Amount"
 
@@ -76,16 +76,29 @@ BANK = Banking()
 output = BANK.create_account(username = "Divyanshu", password = "abcytr24", amount = 100000)
 print(output)
 
-output = BANK.deposit(username = "Divyanshu", password = "abcytr24" , amount = 2000)
+output = BANK.deposit("Divyanshu","abcytr24" , 2000)
 print(output)
 
-output = BANK.withdraw(username = "Divyanshu", password = "abcytr24", amount = 5000)
+output = BANK.withdraw("Divyanshu","abcytr24",5000)
+print(output)
+print("-----------------------------------")
+
+output = BANK.balance("Divyanshu","abcytr24")
+print(output)
+
+
+output = BANK.create_account(username = "Divyanshu Soni", password = "abcygege4", amount = 10445500)
+print(output)
+
+output = BANK.deposit("Divyanshu Soni","abcygege4" , 232000)
+print(output)
+
+output = BANK.withdraw("Divyanshu Soni","abcygege4",5675000)
 print(output)
 print()
 
-output = BANK.balance(username = "Divyanshu", password = "abcytr24")
+output = BANK.balance("Divyanshu Soni","abcygege4")
 print(output)
-
 
 
 
